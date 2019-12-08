@@ -1,13 +1,11 @@
 import scipy
-
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.io import loadmat
 from sklearn import svm
-import re #regular expression for e-mail processing
+import re
 
 # 这是一个可用的英文分词算法(Porter stemmer)
-from stemming.porter2 import stem
+
 
 # 这个英文算法似乎更符合作业里面所用的代码，与上面效果差不多
 import nltk, nltk.stem.porter
@@ -73,8 +71,6 @@ def email2FeatureVector(email):
 
 vector = email2FeatureVector(email)
 print('length of vector = {}\nnum of non-zero = {}'.format(len(vector), int(vector.sum())))
-
-
 
 # Training set
 mat1 = loadmat('data/spamTrain.mat')
